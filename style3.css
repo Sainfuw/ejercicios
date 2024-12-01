@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background: #161624;
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  position: relative;
+  display: grid;
+  place-content: center;
+  height: 50vh;
+  max-width: 400px;
+  max-height: 500px;
+  background: #060c21;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.card .content {
+  display: grid;
+  place-content: center;
+  text-wrap: pretty;
+  gap: 2rem;
+  color: #ddd;
+  letter-spacing: 0.2rem;
+  padding: 20px;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 10px;
+  background: conic-gradient(
+    from var(--angle),
+    #9504f6 0%,
+    transparent 10%,
+    transparent 90%,
+    #9504f6 100%
+  );
+  z-index: -1;
+}
+
+.card:hover::after {
+  animation: glowing-border 3s linear infinite;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 48deg;
+  inherits: false;
+}
+
+@keyframes glowing-border {
+  from {
+    --angle: 48deg;
+  }
+
+  to {
+    --angle: 408deg;
+  }
+}

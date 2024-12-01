@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <style>
+      body {
+        background-color: #07071d;
+      }
+
+      .gallery {
+        max-width: 1000px;
+        margin-inline: auto;
+        display: flex;
+        gap: 0.25rem;
+        transform-style: preserve-3d;
+        pointer-events: none;
+
+        & > img {
+          flex: 1;
+          aspect-ratio: 1 / 1.5;
+          cursor: pointer;
+          transition: 0.4s;
+          pointer-events: auto;
+          -webkit-box-reflect: below 4px
+            linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+
+          max-width: calc(100% / 3 - 0.5rem);
+          display: block;
+          object-fit: cover;
+          border-radius: 4px;
+        }
+
+        & > img:hover {
+          transform: scale(1.2);
+          box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        &:hover > :not(img:hover) {
+          margin-inline: -0.25rem;
+          transform: perspective(400px) rotateY(30deg) scale(0.8);
+        }
+
+        & > img:hover ~ img {
+          transform: perspective(400px) rotateY(-30deg) scale(0.8) !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+      <img
+        src="https://plus.unsplash.com/premium_photo-1682096467444-8861e1dc3bc2"
+      />
+      <img
+        src="https://plus.unsplash.com/premium_photo-1682096252599-e8536cd97d2b"
+      />
+      <img
+        src="https://plus.unsplash.com/premium_photo-1691784778805-e1067ac42e01"
+      />
+      <img
+        src="https://plus.unsplash.com/premium_photo-1682096467444-8861e1dc3bc2"
+      />
+      <img
+        src="https://plus.unsplash.com/premium_photo-1682096252599-e8536cd97d2b"
+      />
+      <img
+        src="https://plus.unsplash.com/premium_photo-1691784778805-e1067ac42e01"
+      />
+      <img
+        src="https://plus.unsplash.com/premium_photo-1682096467444-8861e1dc3bc2"
+      />
+    </div>
+  </body>
+</html>

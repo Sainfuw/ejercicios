@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      .wrapper {
+        background: #ffed99;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .triangle {
+        background: #ffed99;
+        border-bottom-right-radius: 100% 100%;
+      }
+      .black {
+        background: #000000;
+      }
+      .orange {
+        background: #f48b26;
+      }
+      .red {
+        background: #9f3333;
+      }
+      .green {
+        background: #3f8627;
+      }
+      .size-5 {
+        width: 25px;
+        height: 25px;
+      }
+      .size-10 {
+        width: 50px;
+        height: 50px;
+      }
+      .size-20 {
+        width: 75px;
+        height: 75px;
+      }
+      .size-30 {
+        width: 125px;
+        height: 125px;
+      }
+      .size-40 {
+        width: 200px;
+        height: 200px;
+      }
+      .flex {
+        display: flex;
+      }
+      .flex-col {
+        flex-direction: column;
+        align-items: end;
+      }
+      .rotate-90 {
+        rotate: 90deg;
+      }
+      .rotate-180 {
+        rotate: 180deg;
+      }
+      .rotate-270 {
+        rotate: 270deg;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="flex flex-col">
+        <div class="flex">
+          <div class="triangle orange size-20 rotate-180"></div>
+          <div class="flex flex-col">
+            <div class="triangle orange size-10 rotate-270"></div>
+            <div class="triangle black size-5"></div>
+          </div>
+        </div>
+        <div class="triangle red size-30 rotate-90"></div>
+      </div>
+      <div class="triangle green size-40"></div>
+    </div>
+  </body>
+</html>
